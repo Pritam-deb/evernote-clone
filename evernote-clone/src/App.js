@@ -5,6 +5,8 @@ import './App.css';
 import projectFirestore from './firebase/config';
 import {Button} from '@material-ui/core';
 import firebase from 'firebase/app';
+import EditorComponent from './editor/editor';
+import SidebarComponent from './sidebar/sidebar';
 
 function App() {
   //const [selectedNote, setSelectedNote] = useState(null);
@@ -29,10 +31,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        hello world
+        <EditorComponent></EditorComponent>  
+        {/* <sidebarComponent></sidebarComponent> */}
         <Button onClick={componentDidMount}>test</Button>
-      </header>
     </div>
   );
 }
