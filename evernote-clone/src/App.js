@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
         <EditorComponent></EditorComponent>  
-        {/* <sidebarComponent></sidebarComponent> */}
+        <SidebarComponent></SidebarComponent>
         <Button onClick={componentDidMount}>test</Button>
     </div>
   );

@@ -6,7 +6,7 @@ import React from 'react';
 // import SidebarItemComponent from '../sidebaritem/sidebarItem';
 
 
-function sidebarComponent() {
+function SidebarComponent() {
 
 
 
@@ -18,4 +18,4 @@ function sidebarComponent() {
       );
 }
 
-export default {sidebarComponent};
+export default SidebarComponent;

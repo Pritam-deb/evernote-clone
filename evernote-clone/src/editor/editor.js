@@ -14,4 +14,4 @@ function EditorComponent() {
       );
 }
 
-export default { EditorComponent };
+export default EditorComponent ;
