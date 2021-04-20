@@ -7,7 +7,7 @@ import React from 'react';
 // import { removeHTMLTags } from '../helpers';
 
 
-function sidebarItem() {
+function SidebarItem() {
 
 
 
@@ -23,4 +23,4 @@ function sidebarItem() {
       );
 }
 
-export default {sidebarItem};
+export default SidebarItem;
