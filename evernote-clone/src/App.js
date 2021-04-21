@@ -30,11 +30,12 @@ function App() {
 
   return (
     <div className="App">
-        <EditorComponent></EditorComponent>  
         <SidebarComponent 
-          selectedNoteIndex = {selectedNoteIndex}>
-          notes = {notes}
+            selectedNoteIndex = {selectedNoteIndex}
+            notes = {notes}>
+            
         </SidebarComponent>
+        <EditorComponent></EditorComponent>  
         <Button onClick={componentDidMount}>test</Button>
     </div>
   );

@@ -18,6 +18,7 @@ function SidebarComponent(props) {
       const notes = props;
       const classes = props;
       const selectedNoteIndex = props;
+      
 
     return (
             <div className={classes.sidebarContainer}>
