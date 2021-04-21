@@ -9,9 +9,9 @@ import EditorComponent from './editor/editor';
 import SidebarComponent from './sidebar/sidebar';
 
 function App() {
-  //const [selectedNote, setSelectedNote] = useState(null);
+  const [selectedNote, setSelectedNote] = useState(null);
   const [notes, setNotes] = useState(null);
-  //const [selectedNoteIndex, setSelectedNoteIndex] = useState(null);
+  const [selectedNoteIndex, setSelectedNoteIndex] = useState(null);
 
   const componentDidMount= ()=>{
     firebase.firestore().collection('notes').onSnapshot(
@@ -31,7 +31,10 @@ function App() {
   return (
     <div className="App">
         <EditorComponent></EditorComponent>  
-        <SidebarComponent></SidebarComponent>
+        <SidebarComponent 
+          selectedNoteIndex = {selectedNoteIndex}>
+          notes = {notes}
+        </SidebarComponent>
         <Button onClick={componentDidMount}>test</Button>
     </div>
   );
