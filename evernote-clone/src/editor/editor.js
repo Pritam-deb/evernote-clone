@@ -37,4 +37,4 @@ function EditorComponent(props) {
       );
 }
 
-export default EditorComponent ;
+export default withStyles(styles) (EditorComponent) ;

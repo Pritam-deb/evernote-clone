@@ -13,14 +13,11 @@ function SidebarComponent(props) {
             console.log('New button clicked');
       }
 
+      const { notes, classes, selectedNoteIndex } = props;
 
-
-      const notes = props;
-      const classes = props;
-      const selectedNoteIndex = props;
       
 
-    return (
+      return (
             <div className={classes.sidebarContainer}>
                   <Button 
                         onClick={newNoteBtnClick}
@@ -29,4 +26,4 @@ function SidebarComponent(props) {
       );
 }
 
-export default SidebarComponent;
+export default withStyles(styles) (SidebarComponent);

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import projectFirestore from './firebase/config';
-import {Button} from '@material-ui/core';
+import {Button, withStyles} from '@material-ui/core';
 import firebase from 'firebase/app';
 import EditorComponent from './editor/editor';
 import SidebarComponent from './sidebar/sidebar';

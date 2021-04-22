@@ -23,7 +23,7 @@ const styles = theme => ({
       borderBottom: '1px solid black',
       borderRadius: '0px',
       backgroundColor: '#29487d',
-      color: 'blue',
+      color: 'white',
       '&:hover': {
         backgroundColor: '#88a2ce'
       }
