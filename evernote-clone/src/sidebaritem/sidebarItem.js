@@ -18,7 +18,7 @@ function SidebarItem(props) {
       props.deleteNote(note);
     }
   }
- 
+
 
     return (
         <div key={_index}>

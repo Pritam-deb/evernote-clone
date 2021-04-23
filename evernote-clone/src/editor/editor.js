@@ -1,5 +1,5 @@
 
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import ReactQuill from 'react-quill';
 import debounce from '../helpers';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
@@ -24,6 +24,19 @@ function EditorComponent(props) {
 		}, 1500)
 	).current
 
+      // useEffect(()=>{
+      //       setText(props.selectedNote.body);
+      //       setTitle(props.selectedNote.title);
+      //       setId(props.selectedNote.id);
+      // },[])
+
+      useEffect(()=>{
+            if(props.selectedNote.id !== id) {
+            setText(props.selectedNote.body);
+            setTitle(props.selectedNote.title);
+            setId(props.selectedNote.id);
+            }
+      },[])
 
     return (
         
