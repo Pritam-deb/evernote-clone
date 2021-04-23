@@ -28,17 +28,25 @@ function App() {
       })
   },[])
 
+  const selectNote = (note, index) => {
+    setSelectedNote(note);
+    setSelectedNoteIndex(index);
+  }
+
+
 
   return (
     <div className="App">
       
         <SidebarComponent 
             selectedNoteIndex = {selectedNoteIndex}
-            notes = {notes}>
-            
+            notes = {notes}
+            // deleteNote={this.deleteNote}
+            selectNote = {selectNote}
+            // newNote={this.newNote}
+            >
         </SidebarComponent>
         <EditorComponent></EditorComponent>  
-        {/* <Button onClick={componentDidMount}>test</Button> */}
         
     </div>
   );
