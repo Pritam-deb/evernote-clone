@@ -24,11 +24,19 @@ function EditorComponent(props) {
 		}, 1500)
 	).current
 
-      // useEffect(()=>{
-      //       setText(props.selectedNote.body);
-      //       setTitle(props.selectedNote.title);
-      //       setId(props.selectedNote.id);
-      // },[])
+      useEffect(()=>{
+            setText(props.selectedNote.body);
+            setTitle(props.selectedNote.title);
+            setId(props.selectedNote.id);
+      },[])
+
+      // componentDidUpdate=() => {
+      //       if(props.selectedNote.id !== id) {
+      //             setText(props.selectedNote.body);
+      //             setTitle(props.selectedNote.title);
+      //             setId(props.selectedNote.id);
+      //       }
+      // }
 
       useEffect(()=>{
             if(props.selectedNote.id !== id) {
