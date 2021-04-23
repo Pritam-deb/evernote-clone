@@ -46,7 +46,14 @@ function App() {
             // newNote={this.newNote}
             >
         </SidebarComponent>
-        <EditorComponent></EditorComponent>  
+        {
+        selectedNote ? 
+          <EditorComponent selectedNote={selectedNote}
+          selectedNoteIndex={selectedNoteIndex}
+          notes = {notes}></EditorComponent>  :
+        null
+        }
+        
         
     </div>
   );
