@@ -13,7 +13,11 @@ function SidebarItem(props) {
   const { _index, _note, classes, selectedNoteIndex} = props;
 
   const selectNote = (n,i) => props.selectNote(n,i);
-
+  const deleteNote = (note) => {
+    if(window.confirm(`Are you  sure you want to delete: ${note.title}`)){
+      props.deleteNote(note);
+    }
+  }
  
 
     return (
@@ -31,7 +35,7 @@ function SidebarItem(props) {
                 secondary={removeHTMLTags(_note.body.substring(0, 30))+'. . . .'}></ListItemText>
               </div>
               <DeleteIcon 
-              //onClick={()=>deleteNote(_note)}
+              onClick={()=>deleteNote(_note)}
               className={classes.deleteIcon}
               ></DeleteIcon>
           </ListItem>
