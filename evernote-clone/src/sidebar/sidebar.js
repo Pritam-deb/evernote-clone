@@ -18,11 +18,20 @@ function SidebarComponent(props)
       const { notes, classes, selectedNoteIndex } = props;
 
       const updateTitle = (txt) => {
-            console.log('here it is: ',txt);
+            setTitle(txt);
       }
 
-      
+      const newNote = () => {
+            console.log(title);
+      }
+      const selectNote = () => {
+            console.log('select note');
+      }
+      const deleteNote = () => {
+            console.log('delete node');
+      }
 
+     if(notes){
       return (
             <div className={classes.sidebarContainer}>
                   <Button 
@@ -36,11 +45,37 @@ function SidebarComponent(props)
                               placeholder = 'Enter note title'
                               onKeyUp={(e)=>updateTitle(e.target.value)}>
                               </input>
+                              <Button
+                                    className={classes.newNoteSubmitBtn}
+                                    onClick={newNote}>Submit Note</Button>
+                        
                         </div> : 
                               null
                   }
+                  <List>
+                        {
+                              notes.map((_note,_index) => {
+                                    return(
+                                          <div key={_index}>
+                                                <SidebarItemComponent
+                                                _note={_note}
+                                                _index={_index}
+                                                selectedNoteIndex={selectedNoteIndex}
+                                                selectNote={selectNote}
+                                                deleteNote={deleteNote}>
+
+                                                </SidebarItemComponent>
+                                                <Divider></Divider>
+                                          </div>
+                                    )
+                              })
+                        }
+                  </List>
             </div>
       );
+     } else{
+           return(<div>yo</div>)
+     }
 }
 
 export default withStyles(styles) (SidebarComponent);

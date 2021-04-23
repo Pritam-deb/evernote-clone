@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //import firebase from './firebase/config'
 //import logo from './logo.svg';
 import './App.css';
@@ -13,9 +13,11 @@ function App() {
   const [notes, setNotes] = useState(null);
   const [selectedNoteIndex, setSelectedNoteIndex] = useState(null);
 
-  const componentDidMount= ()=>{
-    firebase.firestore().collection('notes').onSnapshot(
-      serverUpdate => {
+  useEffect(()=>{
+    firebase
+      .firestore()
+      .collection('notes')
+      .onSnapshot(serverUpdate => {
         const notes = serverUpdate.docs.map(_doc => {
           const data = _doc.data();
           data['id'] = _doc.id;
@@ -23,22 +25,39 @@ function App() {
         });
         console.log(notes);
         setNotes(notes);
-      }
-    );
-  }
+      })
+  },[])
 
 
   return (
     <div className="App">
+      
         <SidebarComponent 
             selectedNoteIndex = {selectedNoteIndex}
             notes = {notes}>
             
         </SidebarComponent>
         <EditorComponent></EditorComponent>  
-        <Button onClick={componentDidMount}>test</Button>
+        {/* <Button onClick={componentDidMount}>test</Button> */}
+        
     </div>
   );
+
+
+  // const componentDidMount = () => {
+  //   firebase
+  //     .firestore()
+  //     .collection('notes')
+  //     .onSnapshot(serverUpdate => {
+  //       const notes = serverUpdate.docs.map(_doc => {
+  //         const data = _doc.data();
+  //         data['id'] = _doc.id;
+  //         return data;
+  //       });
+  //       console.log(notes);
+  //       this.setState({ notes: notes });
+  //     });
+  // }
 }
 
 export default App;
