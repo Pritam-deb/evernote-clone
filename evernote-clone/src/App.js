@@ -33,9 +33,6 @@ function App() {
     setSelectedNoteIndex(index);
   }
 
-  const noteUpdate = (id, noteObj) => {
-    console.log(id, noteObj);
-  }
 
 
   return (
@@ -55,8 +52,7 @@ function App() {
           key = {selectedNoteIndex}
           selectedNote={selectedNote}
           selectedNoteIndex={selectedNoteIndex}
-          notes = {notes}
-          noteUpdate={noteUpdate}></EditorComponent>  :
+          notes = {notes}></EditorComponent>  :
         null
         }
         
