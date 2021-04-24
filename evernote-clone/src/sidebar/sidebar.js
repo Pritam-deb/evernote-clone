@@ -26,7 +26,7 @@ function SidebarComponent(props)
       }
       const selectNote = (n, i) => props.selectNote(n, i);
       const deleteNote = () => {
-            console.log('delete node');
+            console.log('delete note');
       }
 
      if(notes){

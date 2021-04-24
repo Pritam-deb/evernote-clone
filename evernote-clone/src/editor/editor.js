@@ -20,9 +20,13 @@ function EditorComponent(props) {
 
       const update = useRef(
 		debounce(() => {
-			console.log('updating database!')
+			props.noteUpdate(id,{
+                        title:title,
+                        body:text,
+                  })
+                  //console.log(props.selectedNote.body);
 		}, 1500)
-	).current
+      ).current
 
       useEffect(()=>{
             setText(props.selectedNote.body);
@@ -30,13 +34,7 @@ function EditorComponent(props) {
             setId(props.selectedNote.id);
       },[])
 
-      // componentDidUpdate=() => {
-      //       if(props.selectedNote.id !== id) {
-      //             setText(props.selectedNote.body);
-      //             setTitle(props.selectedNote.title);
-      //             setId(props.selectedNote.id);
-      //       }
-      // }
+ 
 
       useEffect(()=>{
             if(props.selectedNote.id !== id) {
