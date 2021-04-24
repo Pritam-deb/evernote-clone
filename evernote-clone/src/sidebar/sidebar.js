@@ -22,7 +22,9 @@ function SidebarComponent(props)
       }
 
       const newNote = () => {
-            console.log(title);
+            props.newNote(title);
+            setTitle(null);
+            setAddingNote(false);
       }
       const selectNote = (n, i) => props.selectNote(n, i);
       const deleteNote = () => {

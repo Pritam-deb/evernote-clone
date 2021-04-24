@@ -8,8 +8,8 @@ import styles from './styles';
 
 function EditorComponent(props) {
       const [text, setText] = useState('');
-      const [title, setTitle] = useState('');
-      const [id, setId] = useState('');
+      const [title, setTitle] = useState(props.selectedNote.title);
+      const [id, setId] = useState(props.selectedNote.id);
       const classes = props;
 
 
@@ -24,8 +24,9 @@ function EditorComponent(props) {
               title: title,
               body: val
             });
-        
+            
             setText(val);
+            //console.log('this ',id)
       };
         
       const debounce = (func, delay) => {
@@ -51,6 +52,7 @@ function EditorComponent(props) {
             setText(props.selectedNote.body);
             setTitle(props.selectedNote.title);
             setId(props.selectedNote.id);
+            //console.log('this ',id)
       },[])
 
  
@@ -60,6 +62,7 @@ function EditorComponent(props) {
             setText(props.selectedNote.body);
             setTitle(props.selectedNote.title);
             setId(props.selectedNote.id);
+            //console.log('this is ', id)
             }
       },[])
 
