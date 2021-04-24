@@ -58,7 +58,7 @@ function App() {
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
     const newID = newFromDB.id;
-    await setNotes({notes: [...notes,note]});
+    await setNotes({ notes: [...notes, note] });
     const newNoteIndex = notes.indexOf(notes.filter(_note => _note.id === newID)[0]);
     setSelectedNote(notes[newNoteIndex]);
     setSelectedNoteIndex(newNoteIndex);
