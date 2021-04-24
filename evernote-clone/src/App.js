@@ -48,7 +48,9 @@ function App() {
         </SidebarComponent>
         {
         selectedNote ? 
-          <EditorComponent selectedNote={selectedNote}
+          <EditorComponent 
+          key = {selectedNoteIndex}
+          selectedNote={selectedNote}
           selectedNoteIndex={selectedNoteIndex}
           notes = {notes}></EditorComponent>  :
         null
