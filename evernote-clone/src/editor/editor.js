@@ -13,20 +13,39 @@ function EditorComponent(props) {
       const classes = props;
 
 
-      const updateBody = async(val)=>{
-            await setText(val);
-            update();
+      // const updateBody = async(val)=>{
+      //       await setText(val);
+      //       update();
+      // };
+
+
+      const updateBody = (val) => {
+            props.noteUpdate(id, {
+              title: title,
+              body: val
+            });
+        
+            setText(val);
+      };
+        
+      const debounce = (func, delay) => {
+            let timer;
+        
+            return (...args) => {
+              clearTimeout(timer);
+              timer = setTimeout(() => func.apply(null, args), delay);
+            };
       };
 
-      const update = useRef(
-		debounce(() => {
-			props.noteUpdate(id,{
-                        title:title,
-                        body:text,
-                  })
-                  //console.log(props.selectedNote.body);
-		}, 1500)
-      ).current
+      // const update = useRef(
+	// 	debounce(() => {
+	// 		props.noteUpdate(id,{
+      //                   title:title,
+      //                   body:text,
+      //             })
+      //             //console.log(props.selectedNote.body);
+	// 	}, 1500)
+      // ).current
 
       useEffect(()=>{
             setText(props.selectedNote.body);
@@ -49,7 +68,7 @@ function EditorComponent(props) {
             <div className={classes.editorContainer}>
                   <ReactQuill
                         value = {text}
-                        onChange={updateBody}>
+                        onChange={debounce(updateBody, 1500)}>
 
                   </ReactQuill>
             </div>
