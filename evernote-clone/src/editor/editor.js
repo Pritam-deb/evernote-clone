@@ -10,8 +10,7 @@ function EditorComponent(props) {
       const [text, setText] = useState('');
       const [title, setTitle] = useState('');
       const [id, setId] = useState('');
-      //const [editorNoteBody, setEditorNoteBody] = useState(note.selectedNote.body);
-  
+      const classes = props;
 
 
       const updateBody = async(val)=>{
@@ -25,13 +24,19 @@ function EditorComponent(props) {
 		}, 1500)
 	).current
 
-
       useEffect(()=>{
             setText(props.selectedNote.body);
             setTitle(props.selectedNote.title);
             setId(props.selectedNote.id);
       },[])
 
+      // componentDidUpdate=() => {
+      //       if(props.selectedNote.id !== id) {
+      //             setText(props.selectedNote.body);
+      //             setTitle(props.selectedNote.title);
+      //             setId(props.selectedNote.id);
+      //       }
+      // }
 
       useEffect(()=>{
             if(props.selectedNote.id !== id) {
