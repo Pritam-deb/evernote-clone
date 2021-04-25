@@ -66,14 +66,22 @@ function EditorComponent(props) {
             }
       },[])
 
+      const updateTitle = async(txt) => {
+            await setTitle(txt)
+      }
+
     return (
         
             <div className={classes.editorContainer}>
+                  <BorderColorIcon className={classes.editIcon}></BorderColorIcon>
+                  <input className={classes.titleInput} placeholder='Note title....' value={title ? title : ''} onChange={(e) => updateTitle(e.target.value)}>
+                  </input>
                   <ReactQuill
                         value = {text}
                         onChange={debounce(updateBody, 1500)}>
 
                   </ReactQuill>
+
             </div>
       );
 }
