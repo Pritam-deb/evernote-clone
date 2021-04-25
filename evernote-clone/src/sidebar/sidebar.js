@@ -53,7 +53,7 @@ function SidebarComponent(props)
                               null
                   }
                   <List>
-                        {
+                        { Array.isArray(notes) &&
                               notes.map((_note,_index) => {
                                     return(
                                           <div key={_index}>
