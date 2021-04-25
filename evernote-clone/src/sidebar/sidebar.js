@@ -27,8 +27,8 @@ function SidebarComponent(props)
             setAddingNote(false);
       }
       const selectNote = (n, i) => props.selectNote(n, i);
-      const deleteNote = () => {
-            console.log('delete note');
+      const deleteNote = (note) => {
+            props.deleteNote(note);
       }
 
      if(notes){

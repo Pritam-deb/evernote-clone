@@ -46,6 +46,26 @@ function App() {
     //console.log('the ID is: ',id);
   }
 
+  const deleteNote = async(note) => {
+    const noteIndex = notes.indexOf(note);
+    await setNotes(notes.filter(_note => _note !== note));
+    if(selectedNoteIndex === noteIndex) {
+
+       setSelectedNoteIndex(null);
+       setSelectedNote(null);
+    }
+    else{
+      notes.length > 1 ?
+      selectNote(notes[selectedNoteIndex - 1], selectedNoteIndex - 1) : 
+       setSelectedNoteIndex(null);
+       setSelectedNote(null);
+    }
+
+    firebase.firestore().collection('notes').doc(note.id).delete();
+  }
+
+
+
   const newNote = async(title) => {
     const note = {
       title: title,
@@ -70,7 +90,7 @@ function App() {
         <SidebarComponent 
             selectedNoteIndex = {selectedNoteIndex}
             notes = {notes}
-            // deleteNote={this.deleteNote}
+            deleteNote={deleteNote}
             selectNote = {selectNote}
             newNote={newNote}
             >
