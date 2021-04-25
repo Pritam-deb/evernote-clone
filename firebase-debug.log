@@ -1,0 +1,39 @@
+[debug] [2021-04-25T12:13:38.603Z] ----------------------------------------------------------------------
+[debug] [2021-04-25T12:13:38.605Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2021-04-25T12:13:38.606Z] CLI Version:   9.9.0
+[debug] [2021-04-25T12:13:38.606Z] Platform:      linux
+[debug] [2021-04-25T12:13:38.606Z] Node Version:  v10.19.0
+[debug] [2021-04-25T12:13:38.750Z] Time:          Sun Apr 25 2021 17:43:38 GMT+0530 (India Standard Time)
+[debug] [2021-04-25T12:13:38.751Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-25T12:13:38.765Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-25T12:13:38.765Z] > authorizing via signed-in user (pritamdebnath297@gmail.com)
+[debug] [2021-04-25T12:13:38.765Z] [iam] checking project evernote-console for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-04-25T12:13:38.782Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-25T12:13:38.783Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-25T12:13:39.287Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sun, 25 Apr 2021 12:13:39 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-25T12:13:39.362Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/evernote-console:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-04-25T12:13:40.868Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 25 Apr 2021 12:13:40 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1143","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-25T12:13:40.872Z] > refreshing access token with scopes: []
+[debug] [2021-04-25T12:13:40.873Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-25T12:13:41.144Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sun, 25 Apr 2021 12:13:41 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-25T12:13:41.221Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/evernote-console [none]
+[debug] [2021-04-25T12:13:46.902Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/evernote-console 200
+[debug] [2021-04-25T12:13:46.902Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/evernote-console {"projectId":"evernote-console","projectNumber":"776554901895","displayName":"evernote-console","name":"projects/evernote-console","resources":{"hostingSite":"evernote-console","storageBucket":"evernote-console.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'evernote-console'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-04-25T12:13:46.906Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-04-25T12:13:46.907Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-25T12:13:47.195Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Sun, 25 Apr 2021 12:13:47 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-25T12:13:47.271Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/evernote-console/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-04-25T12:13:58.794Z] Error: getaddrinfo EAI_AGAIN firebasehosting.googleapis.com firebasehosting.googleapis.com:443
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
+[error] 
+[error] Error: Server Error. getaddrinfo EAI_AGAIN firebasehosting.googleapis.com firebasehosting.googleapis.com:443
